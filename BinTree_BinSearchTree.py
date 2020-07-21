@@ -95,7 +95,25 @@ class Basic(metaclass=ABCMeta):
         if not node: return 0
         return 1 + max(self.getHeight(node.right), self.getHeight(node.left))
 
-        
+
+    '''def delete(self, node = self.root, val = None):
+        if not node: return
+        node = self.root
+        if node == val:
+            while True:
+                if node.right:
+                    node.val = node.right.val
+                    node = node.right
+                elif node.left:
+                    node.val = node.left
+                    node = node.left
+                else: break
+            node = None
+            exit()
+        if val > node.val and node.right: delete(node.right, val)
+        elif val< node.val and node.left: delete(node.left, val)
+        else: print("val not found")
+    ''' 
 
 
 class Binary_Search_tree(Basic):
